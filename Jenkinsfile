@@ -22,7 +22,7 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: '1d6bcda3-8e6f-4dd5-b6ba-4a6e3d457d67', usernameVariable: 'sdeepak1008', passwordVariable: 'Sreesailam')]) {
                         bat "docker login -u ${sdeepak1008} -p ${Sreesailam}"
-                        bat 'docker tag sdeepak1008/devops-integration:latest sdeepak1008/devops-integration:1.0.0' // Tag the image explicitly
+                        bat 'docker tag javatechie/devops-integration:latest sdeepak1008/devops-integration:latest' // Tag the image
                         bat 'docker push sdeepak1008/devops-integration:latest'
                     }
                 }
