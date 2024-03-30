@@ -17,17 +17,17 @@ pipeline {
                 }
             }
         }
-        stage('Push image to Hub'){
-            steps{
-                script{
-                   withCredentials([string(credentialsId: '1d6bcda3-8e6f-4dd5-b6ba-4a6e3d457d67', variable: 'Sreesailam')]) {
-                   bat 'docker login -u javatechie -p ${Sreesailam}'
-
-}
-                   bat 'docker push javatechie/devops-integration'
-                }
+      stage('Push image to Hub') {
+    steps {
+        script {
+            withCredentials([usernamePassword(credentialsId: '1d6bcda3-8e6f-4dd5-b6ba-4a6e3d457d67', usernameVariable: 'sdeepak1008', passwordVariable: 'Sreesailam')]) {
+                bat "docker login -u ${sdeepak1008} -p ${Sreesailam}"
             }
+            bat "docker push javatechie/devops-integration"
         }
+    }
+}
+
         stage('Deploy to k8s'){
             steps{
                 script{
