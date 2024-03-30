@@ -20,8 +20,8 @@ pipeline {
         stage('Push image to Hub'){
             steps{
                 script{
-                   withCredentials([string(credentialsId: '1d6bcda3-8e6f-4dd5-b6ba-4a6e3d457d67', variable: '1d6bcda3-8e6f-4dd5-b6ba-4a6e3d457d67')]) {
-                   bat 'docker login -u javatechie -p ${1d6bcda3-8e6f-4dd5-b6ba-4a6e3d457d67}'
+                   withCredentials([string(credentialsId: '1d6bcda3-8e6f-4dd5-b6ba-4a6e3d457d67', variable: 'Sreesailam')]) {
+                   bat 'docker login -u javatechie -p ${Sreesailam}'
 
 }
                    bat 'docker push javatechie/devops-integration'
